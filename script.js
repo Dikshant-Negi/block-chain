@@ -1,5 +1,4 @@
-const contractabi = 
-[
+const contractabi = [
 	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
@@ -155,9 +154,9 @@ const contractabi =
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
-	} 
+	}
 ];
-const contractaddress = "0xcb7f9c464030eca914815c60194e6f5bafcc2724";
+const contractaddress = "0xfcc6f239c7830ece423230a76b405c5fc71f2923";
 
 
 
