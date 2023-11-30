@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Details Form</title>
+    <script src="script.js" defer></script>
+    <script
+      src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+      type="application/javascript"
+    ></script>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #333;
+          margin: 0;
+          padding: 0;
+          height: 100vh;
+      }
+      .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1
+      {
+          color: #716666;
+      }
+      form {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          width: 300px;
+      }
+
+      label {
+          display: block;
+          margin-bottom: 8px;
+      }
+
+      input {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 16px;
+          box-sizing: border-box;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+
+      button {
+          background-color: #4caf50;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-top: 5px;
+      }
+      center{
+        margin-right: 220px;
+      }
+
+      button:hover {
+          background-color: #45a049;
+
+      }
+
+        nav {
+          background-color: #333;
+          overflow: hidden;
+        }
+
+        nav a {
+          float: left;
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+
+        nav a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <section>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="#">About</a>
+        <a href="index.html">Registration</a>
+        <a href="getcustomer.html">Show</a>
+      </nav>
+      <div class="container">
+        <h1>Registeration</h1>
+        <form id="insert_customer">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Customer Name"
+            autocomplete="given-name"
+          />
+
+          <label for="phone">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Phone Number"
+            autocomplete="given-name"
+          />
+
+          <label for="room">Room Number:</label>
+          <input
+            type="number"
+            id="room"
+            name="room"
+            placeholder="Room Number"
+            autocomplete="given-name"
+          />
+
+          <label for="amount">Amount:</label>
+          <input
+            type="number"
+            id="amount"
+            name="amount"
+            placeholder="Amount"
+            autocomplete="given-name"
+          />
+
+          <label for="clear">Clear:</label>
+          <input
+            type="checkbox"
+            id="clear"
+            name="clear"
+            autocomplete="given-name"
+          />
+        </form>
+      </div>
+      <center class="buttons">
+        <button onclick="connectwallet()">wallet</button>
+        <button onclick="addcustomer()">add</button>
+      </center>
+      
+    </section>
+    <!-- <div class="get_customer">
+        <button onclick="get_customer()">Get Customer Info</button>
+
+        <div id="result">
+            <p><strong>Address:</strong> <span id="address"></span></p>
+            <p><strong>Name:</strong> <span id="name"></span></p>
+            <p><strong>Phone Number:</strong> <span id="phone"></span></p>
+            <p><strong>Room Number:</strong> <span id="room"></span></p>
+            <p><strong>Amount:</strong> <span id="amount"></span></p>
+            <p><strong>Clear:</strong> <span id="clear"></span></p>
+        </div>
+    </div> -->
+  </body>
+</html>
