@@ -1,165 +1,163 @@
 const contractabi = 
 [
-    {
-      "inputs": [],
-      "stateMutability": "nonpayable",
-      "type": "constructor"
-    },
-    {
-      "inputs": [],
-      "name": "manager",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "int128",
-          "name": "_phone_no",
-          "type": "int128"
-        },
-        {
-          "internalType": "int128",
-          "name": "_salary",
-          "type": "int128"
-        },
-        {
-          "internalType": "string",
-          "name": "_name",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "_house_address",
-          "type": "string"
-        }
-      ],
-      "name": "insert_employee",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "serve",
-          "type": "string"
-        },
-        {
-          "internalType": "uint256",
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
-      "name": "insert_servicess",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "_service",
-          "type": "string"
-        }
-      ],
-      "name": "serviced",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "_name",
-          "type": "string"
-        },
-        {
-          "internalType": "int256",
-          "name": "_phone_no",
-          "type": "int256"
-        },
-        {
-          "internalType": "int256",
-          "name": "_room_no",
-          "type": "int256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "_amount",
-          "type": "uint256"
-        },
-        {
-          "internalType": "bool",
-          "name": "_clear",
-          "type": "bool"
-        }
-      ],
-      "name": "insert_customers",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "string",
-          "name": "_name",
-          "type": "string"
-        }
-      ],
-      "name": "getcustomer",
-      "outputs": [
-        {
-          "components": [
-            {
-              "internalType": "string",
-              "name": "name",
-              "type": "string"
-            },
-            {
-              "internalType": "int256",
-              "name": "phone_no",
-              "type": "int256"
-            },
-            {
-              "internalType": "int256",
-              "name": "room_no",
-              "type": "int256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "amount",
-              "type": "uint256"
-            },
-            {
-              "internalType": "bool",
-              "name": "clear",
-              "type": "bool"
-            }
-          ],
-          "internalType": "struct HotelContract.customer",
-          "name": "",
-          "type": "tuple"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function",
-      "constant": true
-    }
-  ];
-const contractaddress = "0x00BD02de24c6c359df09513Cdc9D5A91EBB9AE9f";
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			}
+		],
+		"name": "getcustomer",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "int256",
+						"name": "phone_no",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "room_no",
+						"type": "int256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "clear",
+						"type": "bool"
+					}
+				],
+				"internalType": "struct hotel.customer",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "int256",
+				"name": "_phone_no",
+				"type": "int256"
+			},
+			{
+				"internalType": "int256",
+				"name": "_room_no",
+				"type": "int256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_clear",
+				"type": "bool"
+			}
+		],
+		"name": "insert_customers",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "int128",
+				"name": "_phone_no",
+				"type": "int128"
+			},
+			{
+				"internalType": "int128",
+				"name": "_salary",
+				"type": "int128"
+			},
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_house_address",
+				"type": "string"
+			}
+		],
+		"name": "insert_employee",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "serve",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "insert_servicess",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "manager",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_service",
+				"type": "string"
+			}
+		],
+		"name": "serviced",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	} 
+];
+const contractaddress = "0xcb7f9c464030eca914815c60194e6f5bafcc2724";
 
 
 
