@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "ethers": "^6.8.1",
+    "prompt-sync": "^4.2.0",
+    "truffle": "^5.11.5"
+  },
+  "name": "blockchain",
+  "version": "1.0.0",
+  "main": "blockchain.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel</title>
+</head>
+<script>
+    const contrctabi=[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "getbalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "int256",
+				"name": "_phone_no",
+				"type": "int256"
+			},
+			{
+				"internalType": "int256",
+				"name": "_room_no",
+				"type": "int256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_clear",
+				"type": "bool"
+			}
+		],
+		"name": "insert_customers",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_id",
+				"type": "address"
+			},
+			{
+				"internalType": "int256",
+				"name": "_phone_no",
+				"type": "int256"
+			},
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_house_address",
+				"type": "string"
+			}
+		],
+		"name": "insert_employee",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "serve",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "insert_servicess",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "manager",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_to",
+				"type": "address"
+			}
+		],
+		"name": "payment",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_id",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_service",
+				"type": "string"
+			}
+		],
+		"name": "serviced",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
+    const contractaddrs="0x717c88d51ce571ba38e5297d3362d8d7b6c21fa7";
+
+    async function connectwallet(){
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        await provider.send("eth_requestAccounts", []);
+        const signer = provider.getSigner().
+    }
+
+    async function add()
+    {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const contt = new ethers.Contract(contractaddrs,contrctabi,provider);
+        const pro = await contt.connect(provider.getSigner()).insert_customers(document.getElementById('text-input').value); 
+    }
+
+    async function read()
+    {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const contt = new ethers.Contract(contractaddrs,contrctabi,provider);
+        for(let i=0;i<5;i++)
+        {
+            const data=await contt.cust_address(i);
+            const customer_data=await contt.cust(data);
+            document.getElementById('dat').innerText+=customer_data.toString();
+        }
+        console.log(customer_data);
+    }
+
+</script>
+<body>
+    <h1 class="hotel">HOTEL MANAGEMENT</h1>
+        <h3> PROFILE </h3>
+        name <input type="text" id="text-input"> 
+        phone_no <input type="text" id="text-input"> 
+        room_no <input type="text" id="text-input"> 
+        amount <input type="text" id="text-input"> 
+        clear <input type="text" id="text-input"> 
+        <button onclick="add()">Add</button>
+        <button onclick="connectwallet()">connect</button>
+        <h3 id="dat"></h3>
+</body>
+</html>
